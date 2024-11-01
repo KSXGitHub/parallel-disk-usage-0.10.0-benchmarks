@@ -1,0 +1,13 @@
+Benchmark #1: pdu --top-down tmp.sample
+  Time (mean ± σ):      90.7 ms ±   1.1 ms    [User: 63.4 ms, System: 286.5 ms]
+  Range (min … max):    89.5 ms …  94.4 ms    31 runs
+ 
+Benchmark #2: dust --reverse tmp.sample
+  Time (mean ± σ):     117.5 ms ±   5.5 ms    [User: 100.7 ms, System: 307.4 ms]
+  Range (min … max):   114.8 ms … 141.7 ms    24 runs
+ 
+  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet PC without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
+ 
+Summary
+  'pdu --top-down tmp.sample' ran
+    1.30 ± 0.06 times faster than 'dust --reverse tmp.sample'

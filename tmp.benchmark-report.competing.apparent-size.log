@@ -1,0 +1,35 @@
+Benchmark #1: pdu --quantity=apparent-size tmp.sample
+  Time (mean ± σ):      92.0 ms ±   1.6 ms    [User: 59.6 ms, System: 292.9 ms]
+  Range (min … max):    90.4 ms …  97.9 ms    32 runs
+ 
+  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet PC without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
+ 
+Benchmark #2: dust --apparent-size tmp.sample
+  Time (mean ± σ):     116.4 ms ±  13.6 ms    [User: 95.7 ms, System: 306.1 ms]
+  Range (min … max):   105.2 ms … 152.8 ms    27 runs
+ 
+  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet PC without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
+ 
+Benchmark #3: dua --count-hard-links --apparent-size tmp.sample
+  Time (mean ± σ):     143.3 ms ±  12.4 ms    [User: 145.2 ms, System: 377.5 ms]
+  Range (min … max):   125.2 ms … 164.7 ms    18 runs
+ 
+Benchmark #4: ncdu -o /dev/stdout -0 tmp.sample
+  Time (mean ± σ):     218.7 ms ±   1.7 ms    [User: 40.9 ms, System: 177.2 ms]
+  Range (min … max):   216.8 ms … 221.6 ms    13 runs
+ 
+Benchmark #5: gdu --show-apparent-size --non-interactive --no-progress tmp.sample
+  Time (mean ± σ):     145.8 ms ±   3.3 ms    [User: 185.0 ms, System: 372.7 ms]
+  Range (min … max):   141.9 ms … 155.2 ms    19 runs
+ 
+Benchmark #6: du --count-links --apparent-size tmp.sample
+  Time (mean ± σ):     210.8 ms ±   0.9 ms    [User: 25.2 ms, System: 185.0 ms]
+  Range (min … max):   209.7 ms … 212.2 ms    14 runs
+ 
+Summary
+  'pdu --quantity=apparent-size tmp.sample' ran
+    1.27 ± 0.15 times faster than 'dust --apparent-size tmp.sample'
+    1.56 ± 0.14 times faster than 'dua --count-hard-links --apparent-size tmp.sample'
+    1.59 ± 0.04 times faster than 'gdu --show-apparent-size --non-interactive --no-progress tmp.sample'
+    2.29 ± 0.04 times faster than 'du --count-links --apparent-size tmp.sample'
+    2.38 ± 0.04 times faster than 'ncdu -o /dev/stdout -0 tmp.sample'
